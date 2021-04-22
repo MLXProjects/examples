@@ -1,0 +1,60 @@
+# sorry, this isn't like the original aroma installer config script, 
+# it's just a file containing settings :/
+# but hey! the other way is in progress :D
+
+#################
+# MAIN WINDOW
+# values are RGB colors (or default to use automatic values)
+# by default: 
+# back_color is #111111 (darker gray)
+# fore_color is #ed1c24 (crimson red)
+# text_color is the same as fore_color (wether value you put there)
+# text_italic is no
+# console_back is #333333 (dark gray)
+# console_fore is #ffffff (white)
+# console_italic is no
+
+win.back_color=#ffffff
+win.fore_color=#00aacc
+win.text_color=default
+win.text_italic=yes
+win.console_back=default
+win.console_fore=default
+win.console_italic=no
+
+#################
+# STATUSBAR
+# if you want no title, just delete (or put a # before) sb.title
+# sb.title_italic sets if title is drawn as italic text
+# sb.override_bgcolor sets a custom color for the statusbar gradient 
+# (from black to the color). Can be "none" (without the quotes) 
+# if you want to use the foreground color, otherwise it should be
+# a color in RGB format (search on Internet for "rgb color picker").
+# by default: 
+# sb.title_italic is no
+# sb.show_seconds is yes
+# sb.text_color is #ffffff (white)
+# sb.override_color is none
+
+sb.title=AROMA Installer
+sb.title_italic=yes
+sb.show_seconds=yes
+sb.text_color=default
+sb.override_color=none
+
+#################
+# ANIMATIONS
+# animation speed is in milliseconds (you can put default there)
+# for anim_type: possible values are scale, fade, slide, page or default 
+# if anim_speed is slide or page, you can set the animation direction
+# which can be left, right, top or bottom (to and from, depends if open or close)
+# for setting direciton use gui.anim_direction=directiongoeshere
+# by default: 
+# gui.anim_speed is 300
+# gui.anim_type is scale
+# if gui.anim_type is slide or page but anim_direction is not set, 
+# gui.anim_direction is top
+
+gui.anim_speed=350
+gui.anim_type=page
+gui.anim_direction=top

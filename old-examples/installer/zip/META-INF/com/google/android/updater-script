@@ -1,0 +1,11 @@
+ui_print("");
+set_progress(0.100000);
+ui_print("This is running from update-binary-installer");
+ui_print("");
+ui_print("Flashing TWRP 3.0");
+package_extract_file("recovery.img", "/dev/block/mmcblk0p6");
+ui_print("Deleting temp IMG");
+set_progress(1.000000);
+ui_print("");
+ui_print("Thanks TEAM-HURRICANE");
+ui_print("for the aosp installer binary");

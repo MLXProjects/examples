@@ -1,0 +1,1 @@
+int STATUSBAR_HEIGHT=20;

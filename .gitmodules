@@ -1,0 +1,6 @@
+[submodule "installer"]
+	path = installer
+	url = https://github.com/MLXProjects/aroma_installer
+[submodule "recovery"]
+	path = recovery
+	url = https://github.com/MLXProjects/aroma-recovery
