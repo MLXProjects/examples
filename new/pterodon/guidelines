@@ -1,0 +1,26 @@
+pterodon recovery v2 attempt
+
+main utilities:
+install zip files
+mount individual partitions (and all at once)
+format individual partitions
+backup partitions (to tar files, sparse images, who knows? I don't)
+file manager
+usb mode
+terminal
+
+should have:
+settings
+xml parsing
+
+extras:
+games
+ability to flash individual files from zip file 
+custom dpi
+
+file manager:
+explore zip files
+execute binaries (optionally with arguments)
+view images (jpg/png/svg)
+bulk rename/move/copy/delete (using FAB if implemented)
+recycle bin?

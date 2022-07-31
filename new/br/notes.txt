@@ -1,0 +1,34 @@
+[MAIN]
+main window should have:
+books list with titles according to old/new testments
+a pager with two pages, one for old and another for new.
+sidebar for fast access to useful things
+
+[SIDEBAR]
+sidebar should have: 
+app logo
+old testment
+new testment
+favorites/saved versicles
+settings
+
+[READER]
+fix unselect on selected items (should check for saved, but how?)
+title touch should show chapter selector
+
+[FAVORITES]
+save text and color for saved versicle
+should add saved versicles to stack-like pointer array (main struct containing first, last and count; each item having prev/next)
+re-render versicle on select/unselect to make bg color/version changeable
+
+[SETTINGS]
+settings should have:
+dark mode
+font size
+save last open book/capitle (a.k.a resume last session)
+credits/about
+
+should allow to select language and version (RVR/KJV)
+
+[BOOKMGR]
+should add functions to get versicle/chapter from book and index

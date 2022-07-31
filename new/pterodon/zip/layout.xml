@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<libaroma>
+	<!-- light theme -->
+	<!-- colorset
+		primary="#2196F3" primary_text="#FFFFFF" primary_icon="#FFFFFF" primary_light="#BBDEFB" accent="#2E7D32" 
+		window_bg="#E0E0E0" window_text="#212121" 
+		control_bg="#FFFFFF" control_primary_text="#212121" control_secondary_text="#FFFFFF" divider="#B6B6B6" 
+		dialog_bg="#FFFFFF" dialog_primary_text="#212121" dialog_secondary_text="#727272" fill_icons="#2E7D32" / -->
+	
+	<!-- dark theme -->
+	<colorset
+		primary="#0e9f00" primary_text="#FFFFFF" primary_icon="#0e9f00" primary_light="#0e9f00" accent="#0e9f00" 
+		window_bg="#000000" window_text="#0e9f00" 
+		control_bg="#000000" control_primary_text="#FFFFFF" control_secondary_text="#44d036" divider="#0e9f00" 
+		dialog_bg="#161616" dialog_primary_text="#FFFFFF" dialog_secondary_text="#44d036" fill_icons="#0e9f00" />
+	<sidebar>
+		<image height="130dp" img="@logo" center="true" fillcolor="#000" />
+		<list y="130dp" id="sb_list" small_items="true">
+			<caption text="Recovery" />
+			<item text="Install ZIP" />
+			<item text="Partitions" />
+			<item text="Backup/restore" />
+			<divider/>
+			<caption text="Tools" />
+			<item text="File manager" />
+			<item text="Terminal" />
+			<item text="Settings" />
+			<divider/>
+			<caption text="Info" />
+			<item text="About" />
+			<item text="Credits" />
+		</list>
+	</sidebar>
+	
+	<appbar id="main_appbar" bgcolor="#000" 
+			title="Pterodon Recovery" subtitle="an android custom recovery..." 
+			icon="#drawer" width="full" height="56dp" 
+			onclick="sidebar_show" onhold="ptero_close" />
+	
+	<set name="usb_mode" value="MTP" />
+	<set name="appbar_sb_show" value="true" />
+	<fragment id="home_fragment" y="56dp" width="full" height="full">
+		<window id="home_win" active="true">
+			<tab_manager id="hp_tabs" width="full" height="48dp" />
+			<pager id="main_pager" y="48dp" tab_manager="hp_tabs" >
+				<page id="home_page" title="Main Menu">
+					<list id="home_list" separator="textalign">
+						<caption text="ROM & SYSTEM" />
+						<item text="Install ROM" icon="@system_update" onclick="ptero_close" />
+						<item text="Backup and Restore" icon="@restore" />
+						<item text="Wipe" icon="@wipe" />
+						<item text="USB mode" subtext="$(usb_mode)" icon="@usb" />
+						<divider subscreen="true" />
+						<caption text="TOOLS" />
+						<item text="File manager" icon="@folder" />
+						<item text="Terminal" icon="@terminal" />
+						<item text="More..." indent="noicon" />
+						<divider subscreen="true" />
+						<caption text="ADVANCED" />
+						<item text="Logging" icon="@logs" />
+						<item text="Partition Manager" icon="@partition" />
+						<item text="Storage Manager" icon="@storage" />
+						<divider subscreen="true" />
+						<caption text="REBOOT" />
+						<item text="System" icon="@reboot" />
+						<item text="Recovery" icon="@reboot" />
+						<item text="Bootloader" icon="@reboot" />
+						<item text="Download" icon="@reboot" />
+						<item text="EDL" icon="@reboot" />
+					</list>
+				</page>
+				<page id="sett_page" title="Settings">
+					<list id="sett_list" separator="textalign">
+						<caption text="General Settings" />
+						<switch text="Zip signature verification" subtext="Verify zip signature before installing" icon="@verified" />
+						<switch text="Verify AVB" subtext="Verify that Android Verified Boot is disabled before rebooting" selected="true" icon="@verified" />
+						<switch text="Verify FE" subtext="Verify that Forced Encryption is disabled before rebooting" selected="true" icon="@security" />
+					</list>
+				</page>
+				<page id="ui_page" title="User Interface">
+					<list id="ui_list" separator="textalign">
+						<caption text="Look and feel" />
+						<item text="Status bar" icon="@window_maximize" />
+						<item text="Date & time" subtext="Time & zone settings" icon="@clock" />
+						<item text="Font" subtext="Choose your preferred text font" icon="@font" />
+						<item text="Dark mode" subtext="Enable dark mode through entire GUI" icon="@theme_light_dark" />
+						<item text="Fahrenheit" subtext="Show temperature in Fahrenheit instead of Celsius" icon="@fahrenheit" />
+					</list>
+				</page>
+				<page id="hw_page" title="Hardware">
+					<list id="hw_list" separator="textalign">
+						<caption text="Hardware Settings" />
+						<item text="Buttons" subtext="Hardware buttons customization" icon="@keyboard" />
+						<item text="Display" subtext="Various display settings" icon="@brightness" />
+						<item text="Memory" subtext="Show device memory info" icon="@memory" />
+						<item text="Battery" subtext="Show battery information" icon="@battery" />
+						<item text="Vibration" subtext="Device vibration settings" icon="@vibration" />
+					</list>
+				</page>
+				<page id="about_page" title="About">
+					<list id="about_list" separator="textalign">
+						<caption text="About Recovery" />
+						<item text="Name" subtext="$(recovery_name)" icon="@info" />
+						<item text="Version" subtext="$(recovery_version)" indent="noicon" />
+						<item text="Codename" subtext="$(recovery_codename)" indent="noicon" />
+						<item text="Build fingerprint" subtext="$(recovery_fingerprint)" indent="noicon" />
+						<item text="Kernel version" subtext="$(kernel_version)" indent="noicon" />
+						<divider subscreen="true" />
+						<caption text="Official news and updates" />
+						<item text="Telegram" subtext="<u>https://t.me/atgdroid" icon="@telegram" />
+						<item text="Instagram" subtext="<u>https://instagram.com/frantakysela" icon="@instagram" />
+						<item text="Twitter" subtext="<u>https://twitter.com/atgdroid" icon="@twitter" />
+						<divider subscreen="true" />
+						<caption text="Discussion channels" />
+						<item text="Telegram" subtext="Telegram group for open discussion: <u>https://t.me/PterodonRecovery" icon="@telegram" />
+						<item text="XDA Developers" subtext="Check <u>forum.xda-developers.com</u> for device specific updates and discussion" icon="@xda" />
+						<divider subscreen="true" />
+						<caption text="Support the development" />
+						<item text="Source code" subtext="We love pull requests!" icon="@github" />
+						<item text="Translate" subtext="Help us by translating recovery in to different languages" icon="@language" />
+						<item text="Donate via PayPal" subtext="Support us by donation: <u>https://www.paypal.me/atgdroid" icon="@heart" />
+						<divider subscreen="true" />
+						<caption text="Developers" />
+						<item text="ATGDroid" subtext="Founder and lead developer" icon="@atgdroid" icon_nofill="true" />
+						<item text="MLX Projects" subtext="A guy who works on Libaroma" icon="@mlx" icon_nofill="true" />
+					</list>
+				</page>
+			</pager>
+		</window>
+	</fragment>
+	
+	<actionset name="sidebar_show">
+		<if var="$(appbar_sb_show)" equal_to="true">
+			<show type="sidebar" />
+		</if>
+		<else>
+			<exit/>
+		</else>
+	</actionset>
+	<actionset name="go_home">
+		<show type="window" />
+	</actionset>
+	<actionset name="ptero_close">
+		<exit/>
+	</actionset>
+</libaroma>

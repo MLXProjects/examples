@@ -1,0 +1,35 @@
+read config from zip file 
+make this configurable:
+screen rgb
+dpi
+
+and make this testable too:
+xml parser (custom tabs/layouts, theme when libaroma is mature enough)
+json parser? (idk how)
+dialog (fix it pls)
+fragment
+toast (when finished)
+
+LAYOUT:
+[status bar]
+	time, battery, charger connection
+[sidebar]
+	not sure what to add here
+	aroma logo
+	test selector?
+	about dialog
+	exit button :P
+[appbar]
+	settable by some page
+[fragment]
+	[list? might be button selector, if I adapt the transition animation to also animate width]
+		1) pager:
+			1) list sample with different options
+			2) pager swipe animation selector (option items)
+			3) list decorations and overscroll effect (switch/options)
+		2) appbar mode selection & text gap toggle
+		3) button samples
+		4) progress bars demonstration
+		5) custom, XML-defined layout
+		6) exit button
+	

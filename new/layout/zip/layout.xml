@@ -1,0 +1,34 @@
+<layout>
+	<font id="0" file="res:///roboto.ttf"/>
+	<window show="true" id="main" bg="#333">
+		<button id="btn1" text="Ancho completo" y= "0" width="max" height="48" raised="true" disabled="false" onclick="" onhold=""/>
+		<button id="btn2" text="Mitad izq." y="48" width="half" height="48" raised="true" color="#0af"/>
+		<button id="btn2" text="Mitad der." x="half" y="48" width="half" height="48" raised="true" color="#000"/>
+		<slider id="sldr" width="50%" y="96" height="48" max="10" value="3" onupdate=""/>
+		<pager id="idk">
+			<list id="somelist"/>
+		</pager>
+		<item/>
+		<progress/>
+		<label/>
+		<text/>
+		<tabs/>
+		<image/>
+		<slider/>
+		<appbar/>
+		<fragment/>
+	</window>
+	<window id="home" template="main">
+		<button id="btn1" text="Not a button"/>
+	</window>
+	<window id="home2" template="main">
+		<button id="btn2" text="Neither a slider" colored=""/>
+	</window>
+
+	<actionset id="exit">
+		<show window="main" animation="12" duration="350"/>
+	</actionset>
+	<actionset id="exit">
+		<hide window="main" animation="12" duration="350"/>
+	</actionset>
+</layout>

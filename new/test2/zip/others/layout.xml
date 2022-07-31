@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window width="match_parent"
+		height="match_parent" >
+	<list id="1" width="match_parent" height="80%">
+		<item type="check" text="I'm a check item :D" />
+		<item type="switch" text="I'm a switch item C:" />
+		<item type="option" text="I'm an option item :)" />
+	</list>
+	<button id="2" y="80%"
+		width="half_parent"
+		height="20%"
+		text="Hello, I am a Button" />
+	<button id="3" x="half_parent" y="80%"
+		width="half_parent"
+		height="20%"
+		text="Hello, I am a Button" />
+</window>

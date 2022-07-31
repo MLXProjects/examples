@@ -1,0 +1,53 @@
+#ifndef __ptero_defines_h__
+#define __ptero_defines_h__
+
+#define PTERO_			
+/* control type hashes */
+#define PTERO_CTL_APPBAR			143655542
+#define PTERO_CTL_BUTTON			151847580
+#define PTERO_CTL_LIST				71631292
+#define PTERO_CTL_IMAGE				102171139
+#define PTERO_CTL_FRAGMENT			248120148
+#define PTERO_CTL_PAGER				103088655
+#define PTERO_CTL_TABMGR			445383793
+
+/* listitem type hashes */
+#define PTERO_LISTITEM_MENU			70713775 /* this hash equast to "item" string, and not "menu" */
+#define PTERO_LISTITEM_IMAGE		PTERO_CTL_IMAGE
+#define PTERO_LISTITEM_CHECK		99549694
+#define PTERO_LISTITEM_SWITCH		154337938
+#define PTERO_LISTITEM_OPTION		153158297
+#define PTERO_LISTITEM_CAPTION		193069806
+#define PTERO_LISTITEM_DIVIDER		193725159
+
+/* function type hashes */
+#define PTERO_FUNC_SET				43450700
+#define PTERO_FUNC_SHOW				72942017
+#define PTERO_FUNC_HIDE				67633562
+#define PTERO_FUNC_EXEC				69796261
+#define PTERO_FUNC_EXIT				71434682
+#define PTERO_FUNC_IF				20447439
+#define PTERO_FUNC_ELSE				69403049
+#define PTERO_FUNC_ELIF				68157856
+
+/* misc hashes */
+#define PTERO_HASH_TRUE				74777024
+#define PTERO_HASH_FALSE			101777931
+#define PTERO_HASH_NAME				68813217
+#define PTERO_HASH_VALUE			107282973
+#define PTERO_TAG_WINDOW			152044184
+#define PTERO_TAG_SIDEBAR			192742106
+#define PTERO_TAG_ACTIONSET			312280010
+#define PTERO_TAG_COLORSET			255001451
+#define PTERO_TAG_ARROW				106431019
+#define PTERO_TAG_DRAWER			146211461
+
+/* if function compare type hashes */
+#define PTERO_IF_EQUAL				252052314
+#define PTERO_IF_GRTR				540476660
+#define PTERO_IF_SMLLR				545981690
+#define PTERO_IF_GREQ				1318324195
+#define PTERO_IF_SMEQ				1326581737
+#define PTERO_IF_DIFF				533923065
+
+#endif /* __ptero_defines_h__ */

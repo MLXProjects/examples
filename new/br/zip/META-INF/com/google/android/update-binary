@@ -1,0 +1,57 @@
+#!/sbin/sh
+TMP_DIR=$(dirname $0)
+AROMA_BIN="${TMP_DIR}/aroma"
+REC_BIN=$(realpath /proc/$PPID/exe)
+REC_FD=$2
+ZIP_PATH=$3
+
+ui_print(){
+	echo ui_print $@>&${REC_FD}
+	echo ui_print "\n">&${REC_FD}
+}
+add_script(){
+	echo $@>>"${REC_BIN}-mod"
+}
+
+ui_print "AROMA startup helper"
+ui_print "Going to unzip $ZIP_PATH to $AROMA_BIN"
+rm -rf "${TMP_DIR}/aroma" "${TMP_DIR}/META-INF"
+unzip "${ZIP_PATH}" "META-INF/com/google/android/aroma" -d "${TMP_DIR}"
+mv "${TMP_DIR}/META-INF/com/google/android/aroma" "${AROMA_BIN}"
+rm -rf "${TMP_DIR}/META-INF"
+chmod 0777 ${AROMA_BIN}
+if [ -e "/dev/dri/card0" ]; then
+#if true; then
+	#replace recovery temporarily with script
+	ui_print "Going to temporarily replace recovery"
+	ui_print "Recovery path is $REC_BIN"
+	mount -o remount,rw /
+	add_script "#!/sbin/sh"
+	add_script "if [ \$(basename \$0) = \"recovery\" ]; then"
+	add_script "#exec aroma bin from tmp"
+	add_script "${AROMA_BIN} 3 0 ${ZIP_PATH}"
+	add_script "#after aroma closes, del this script"
+	add_script "rm -f ${REC_BIN}"
+	add_script "#restore recovery bin"
+	add_script "mv ${REC_BIN}-orig ${REC_BIN}"
+	add_script "else"
+	add_script "#call original recovery bin"
+	add_script "#this is useful when busybox is symlinked to recovery"
+	add_script "return \$(${REC_BIN}-orig \$@)"
+	add_script "fi"
+	chmod 0777 "${REC_BIN}-mod"
+	mv "${REC_BIN}" "${REC_BIN}-orig"
+	mv "${REC_BIN}-mod" "${REC_BIN}"
+	#trigger recovery process restart
+	ui_print "Let's do it!"
+	kill -9 $PPID
+else
+	#execute aroma directly
+	ui_print "Going to run AROMA directly :D"
+	kill -19 $PPID
+	"${AROMA_BIN}" 3 ${REC_FD} "${ZIP_PATH}"
+	kill -18 $PPID
+	ui_print "Thanks, come back later :)"
+fi
+
+return 0

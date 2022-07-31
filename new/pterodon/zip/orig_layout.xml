@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<libaroma>
+	<!-- colorset
+		primary="#2196F3" primary_text="#FFFFFF" primary_icon="#FFFFFF" primary_light="#BBDEFB" accent="#2E7D32" 
+		window_bg="#E0E0E0" window_text="#212121" 
+		control_bg="#FFFFFF" control_primary_text="#212121" control_secondary_text="#FFFFFF" divider="#B6B6B6" 
+		dialog_bg="#FFFFFF" dialog_primary_text="#212121" dialog_secondary_text="#727272" / -->
+	<colorset
+		primary="#0e9f00" primary_text="#FFFFFF" primary_icon="#0e9f00" primary_light="#0e9f00" accent="#0e9f00" 
+		window_bg="#000000" window_text="#0e9f00" 
+		control_bg="#000000" control_primary_text="#FFFFFF" control_secondary_text="#44d036" divider="#0e9f00" 
+		dialog_bg="#161616" dialog_primary_text="#FFFFFF" dialog_secondary_text="#44d036" />
+	<sidebar>
+		<image height="130dp" img="@logo" center="true" fillcolor="#000" />
+		<list y="130dp" id="sb_list" small_items="true">
+			<caption text="Recovery" />
+			<item text="Install ZIP" />
+			<item text="Partitions" />
+			<item text="Backup/restore" />
+			<divider/>
+			<caption text="Tools" />
+			<item text="File manager" />
+			<item text="Terminal" />
+			<item text="Settings" />
+			<divider/>
+			<caption text="Info" />
+			<item text="About" />
+			<item text="Credits" />
+			<divider/>
+		</list>
+	</sidebar>
+	
+	<appbar id="main_appbar" bgcolor="#000" 
+			title="Pterodon Recovery" subtitle="an android custom recovery..." 
+			icon="#drawer" width="full" height="56dp" 
+			onclick="sidebar_show" onhold="ptero_close" />
+	
+	<set name="usb_mode" value="MTP" />
+	<fragment id="home_fragment" y="56dp" width="full" height="full">
+		<window id="home_win" active="true">
+			<list id="home_list">
+				<caption text="ROM & SYSTEM" />
+				<item text="Install ROM" />
+				<item text="Wipe" />
+				<item text="Backup and Restore" />
+				<item text="USB mode" subtext="$(usb_mode)" />
+				<divider subscreen="true" />
+				<caption text="TOOLS" />
+				<item text="File manager" />
+				<item text="Terminal" />
+				<divider subscreen="true" />
+				<caption text="REBOOT" />
+				<item text="System" />
+				<item text="Recovery" />
+				<item text="Bootloader" />
+				<item text="Power off" />
+				<divider subscreen="true" />
+				<caption text="INFO" />
+				<item text="About" />
+				<item text="Credits" />
+			</list>
+		</window>
+	</fragment>
+	
+	<actionset name="sidebar_show">
+		<if var="$(usb_mode)" equal_to="MASS">
+			<show type="sidebar" />
+		</if>
+		<else>
+			<exit/>
+		</elif>
+	</actionset>
+	<actionset name="go_home">
+		<show type="window" />
+	</actionset>
+	<actionset name="ptero_close">
+		<exit/>
+	</actionset>
+</libaroma>
