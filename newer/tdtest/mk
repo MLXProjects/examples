@@ -1,0 +1,22 @@
+#!/bin/sh
+echo "Building as static"
+gcc -static main.c -o tdtest \
+	-I/home/mlx/projects/td/tdlib/include -L/home/mlx/projects/td/tdlib/lib \
+	-ltdjson_static \
+	-ltdjson_private \
+	-ltdclient \
+	-ltdapi \
+	-ltdcore \
+	-ltdactor \
+	-ltddb \
+	-ltdsqlite \
+	-ltdnet \
+	-ltdutils \
+	-ldl \
+	-lm \
+	-lssl \
+	-lcrypto \
+	-lstdc++ \
+	-lz \
+	-lpthread
+echo "Done"

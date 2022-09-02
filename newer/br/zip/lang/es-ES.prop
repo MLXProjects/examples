@@ -1,0 +1,32 @@
+# Language name
+lang.name=Español
+
+# Main UI text
+ui.settings=Ajustes
+ui.old_tab=ANTIGUO
+ui.new_tab=NUEVO
+ui.chapter=Capítulo
+ui.favs=Favoritos
+ui.ot=Antiguo testamento
+ui.nt=Nuevo testamento
+ui.about=Acerca de
+ui.accept=Aceptar
+ui.cancel=Cancelar
+ui.yes=Si
+ui.no=No
+
+# Settings text
+sett.slowmo=Cámara lenta
+sett.slowmo_extra=También llamado modo manteca
+
+sett.darkmode=Modo oscuro
+sett.darkmode_extra=Tema de luz baja
+
+sett.scale=Escalar
+sett.scale_extra=Reemplaza el revelado al iniciar
+
+sett.locale=Idioma
+
+sett.textsize=Tamaño del texto
+
+sett.version=Versión

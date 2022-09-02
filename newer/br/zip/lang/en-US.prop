@@ -1,0 +1,32 @@
+# Language name
+lang.name=English
+
+# Main UI text
+ui.settings=Settings
+ui.old_tab=OLD
+ui.new_tab=NEW
+ui.chapter=Chapter
+ui.favs=Favorites
+ui.ot=Old Testment
+ui.nt=New Testment
+ui.about=About
+ui.accept=Accept
+ui.cancel=Cancel
+ui.yes=Yes
+ui.no=No
+
+# Settings text
+sett.slowmo=Slow motion
+sett.slowmo_extra=A.K.A. butter mode
+
+sett.darkmode=Dark mode
+sett.darkmode_extra=Low light theme
+
+sett.scale=Scale
+sett.scale_extra=Replaces reveal at startup
+
+sett.locale=Language
+
+sett.textsize=Font size
+
+sett.version=Version
